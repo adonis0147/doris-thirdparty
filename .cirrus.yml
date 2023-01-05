@@ -1,0 +1,19 @@
+macos_instance:
+  image: ghcr.io/cirruslabs/macos-monterey-base:latest
+
+task:
+  script: |
+    brew install automake autoconf libtool pkg-config texinfo coreutils gnu-getopt python \
+      cmake ninja ccache bison byacc gettext wget pcre openjdk@11 maven node
+
+    git clone https://github.com/apache/doris
+
+    cd doris/thirdparty
+    bash build-thirdparty.sh -j "$(nproc)"
+
+    kernel="$(uname -s | awk '{print tolower($0)}')"
+    arch="$(uname -m)"
+    tar -cf - installed | xz -z -T0 - >"doris-thirdparty-prebuilt-${kernel}-${arch}.tar.xz"
+
+  artifacts:
+    path: doris/thirdparty/doris-thirdparty-prebuilt-*.tar.xz
