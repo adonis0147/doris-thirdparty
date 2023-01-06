@@ -210,9 +210,42 @@ jobs:
           tar -cf - installed | xz -z -T0 - >"doris-thirdparty-prebuilt-${kernel}-${arch}.tar.xz"
           gh release upload --clobber "${tag_name}" "doris-thirdparty-prebuilt-${kernel}-${arch}.tar.xz"
 
+  cirrus-ci-build:
+    name: Cirrus CI Build
+    needs: prerelease
+    if: needs.prerelease.outputs.should_release == 'true'
+    runs-on: ubuntu-latest
+    environment: CIRRUS-CI
+    env:
+      GH_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          repository: ${{ github.repository }}
+          ref: 'cirrus'
+          submodules: true
+
+      - name: Build and Upload
+        run: |
+          tag_name='automation-1.2-lts'
+
+          cd .github/cirrus-ci-tools/src
+          config='../../cirrus-ci/build-1.2.yml'
+
+          url=$(./trigger-cirrus-ci.py --token ${{ secrets.CIRRUS_CI_TOKEN }} \
+            --repository adonis0147/doris-thirdparty --branch cirrus --config "${config}")
+
+          echo "The artifact url: ${url}"
+          curl -L ${url} -o binary.zip
+          unzip binary.zip
+
+          gh release upload --repo ${{ github.repository }} --clobber "${tag_name}" doris/thirdparty/*.tar.xz
+          gh release upload --repo apache/doris-thirdparty --clobber "${tag_name}" doris/thirdparty/*.tar.xz
+
   success:
     name: Success
-    needs: [prerelease, build]
+    needs: [prerelease, build, cirrus-ci-build]
     if: needs.prerelease.outputs.should_release == 'true'
     runs-on: ubuntu-latest
     env:
@@ -233,7 +266,7 @@ jobs:
 
   failure:
     name: Failure
-    needs: [build]
+    needs: [build, cirrus-ci-build]
     if: failure()
     runs-on: ubuntu-latest
     env:
