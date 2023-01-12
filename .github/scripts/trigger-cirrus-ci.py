@@ -109,7 +109,7 @@ class CirrusCI:
 
     def wait_build(self, build_id, timeout=None, interval=None):
         query = '''
-            query QueryBuild($build_id: ID!) {
+            subscription QueryBuild($build_id: ID!) {
                 build(id: $build_id) {
                     status
                 }
@@ -122,7 +122,13 @@ class CirrusCI:
 
         start_time = time.time()
         while (time.time() - start_time) / 60 < timeout:
-            response = self.request(query, variables)
+            try:
+                response = self.request(query, variables)
+            except Exception as e:
+                logger.warning(str(e))
+                time.sleep(interval * 2)
+                continue
+
             build = response['data']['build']
             if build is None:
                 raise RuntimeError(response)
@@ -168,9 +174,10 @@ def trigger(arguments):
     task_ids = ci.get_task_ids(build_id)
     logger.info('The task IDs of build {} is {}'.format(build_id, task_ids))
 
-    artifact_url = 'https://api.cirrus-ci.com/v1/artifact/task/{}/binary.zip'.format(task_ids[0])
-    logger.info('The url of the artifact is {}'.format(artifact_url))
-    print(artifact_url)
+    for task_id in task_ids:
+        artifact_url = 'https://api.cirrus-ci.com/v1/artifact/task/{}/binary.zip'.format(task_id)
+        logger.info('The url of the artifact is {}'.format(artifact_url))
+        print(artifact_url)
 
 
 logger = Logger().logger
