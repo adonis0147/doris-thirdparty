@@ -1,0 +1,5 @@
+include(doris_default)
+
+[env]
+PATH=/usr/bin:/bin
+

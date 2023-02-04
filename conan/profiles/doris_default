@@ -1,0 +1,16 @@
+include(default)
+
+[tool_requires]
+make/4.3
+libtool/2.4.7
+pkgconf/1.9.3
+cmake/3.25.1
+ninja/1.11.1
+
+[options]
+cmake:bootstrap=True
+cmake:with_openssl=False
+
+[conf]
+tools.env.virtualenv:auto_use=True
+

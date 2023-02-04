@@ -1,0 +1,5 @@
+sources:
+  "1.11.1":
+    url: https://github.com/ninja-build/ninja/archive/v1.11.1.tar.gz
+    md5: 32151c08211d7ca3c1d832064f6939b0
+
