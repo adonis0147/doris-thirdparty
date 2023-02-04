@@ -1,4 +1,5 @@
 [requires]
 libgettext/0.21
 binutils/2.39@doris/thirdparty
-
+odbc/2.3.7
+openssl/1.1.1s

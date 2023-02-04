@@ -1,0 +1,9 @@
+sources:
+  "2.1.12":
+    url: https://github.com/libevent/libevent/archive/release-2.1.12-stable.tar.gz
+    md5: 0d5a27436bf7ff8253420c8cf09f47ca
+
+patches:
+  "2.1.12":
+    - patch_file: patches/libevent.patch
+
