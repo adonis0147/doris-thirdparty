@@ -3,3 +3,10 @@ libgettext/0.21
 binutils/2.39@doris/thirdparty
 odbc/2.3.7
 openssl/1.1.1s
+libevent/2.1.12@doris/thirdparty
+zlib/1.2.13
+lz4/1.9.4
+bzip2/1.0.8
+lzo/2.10
+zstd/1.5.2
+boost/1.73.0
