@@ -1,1 +1,0 @@
-. "/Users/adonis/Programs/doris-thirdparty/conan/build/deactivate_conanrunenv-release-armv8.sh"

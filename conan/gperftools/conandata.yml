@@ -1,0 +1,5 @@
+sources:
+  "2.10":
+    url: https://github.com/gperftools/gperftools/releases/download/gperftools-2.10/gperftools-2.10.tar.gz
+    md5: 62bf6c76ba855ed580de5e139bd2a483
+
