@@ -1,0 +1,3 @@
+[requires]
+vectorscan/5.4.7@doris/thirdparty
+

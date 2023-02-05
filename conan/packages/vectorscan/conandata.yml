@@ -1,0 +1,10 @@
+sources:
+  "5.4.7":
+    url: https://github.com/VectorCamp/vectorscan/archive/refs/tags/vectorscan/5.4.7.tar.gz
+    md5: ae924ccce79ef9bf6bf118693ae14fe5
+
+patches:
+  "5.4.7":
+    - patch_file: patches/vectorscan-5.4.7.patch
+    - patch_file: patches/fix_include.patch
+
