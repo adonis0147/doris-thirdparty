@@ -1,0 +1,4 @@
+sources:
+  "3.15.0":
+    url: https://github.com/google/protobuf/archive/v3.15.0.tar.gz
+    md5: 3fb6c41f7b3c621424543f43d54baa42
