@@ -16,3 +16,5 @@ glog/0.4.0@doris/thirdparty
 rapidjson/master@doris/thirdparty
 snappy/1.1.8
 gperftools/2.10@doris/thirdparty
+libcurl/7.79.0
+re2/20210202
