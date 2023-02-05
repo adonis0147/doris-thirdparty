@@ -1,0 +1,9 @@
+sources:
+  "0.4.0":
+    url: https://github.com/google/glog/archive/v0.4.0.tar.gz
+    md5: 0daea8785e6df922d7887755c3d100d0
+
+patches:
+  "0.4.0":
+    - patch_file: patches/glog-0.4.0.patch
+

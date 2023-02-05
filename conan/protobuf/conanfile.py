@@ -1,5 +1,4 @@
 from conans import python_requires
-from conan.tools.files import copy
 
 base = python_requires("protobuf/3.15.8")
 

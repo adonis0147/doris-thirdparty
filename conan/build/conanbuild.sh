@@ -1,0 +1,1 @@
+. "/Users/adonis/Programs/doris-thirdparty/conan/build/conanbuildenv-release-armv8.sh"

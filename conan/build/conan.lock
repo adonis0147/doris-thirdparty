@@ -1,0 +1,367 @@
+{
+ "graph_lock": {
+  "nodes": {
+   "0": {
+    "options": "boost:addr2line_location=/usr/bin/addr2line\nboost:asio_no_deprecated=False\nboost:buildid=None\nboost:bzip2=True\nboost:debug_level=0\nboost:diagnostic_definitions=False\nboost:error_code_header_only=False\nboost:extra_b2_flags=None\nboost:fPIC=True\nboost:filesystem_no_deprecated=False\nboost:filesystem_use_std_fs=False\nboost:filesystem_version=None\nboost:header_only=False\nboost:i18n_backend=deprecated\nboost:i18n_backend_iconv=libiconv\nboost:i18n_backend_icu=False\nboost:layout=system\nboost:lzma=False\nboost:magic_autolink=False\nboost:multithreading=True\nboost:namespace=boost\nboost:namespace_alias=False\nboost:pch=True\nboost:python_executable=None\nboost:python_version=None\nboost:segmented_stacks=False\nboost:shared=False\nboost:system_no_deprecated=False\nboost:system_use_utf8=False\nboost:visibility=hidden\nboost:with_stacktrace_backtrace=True\nboost:without_atomic=False\nboost:without_chrono=False\nboost:without_container=False\nboost:without_context=False\nboost:without_contract=False\nboost:without_coroutine=False\nboost:without_date_time=False\nboost:without_exception=False\nboost:without_fiber=True\nboost:without_filesystem=False\nboost:without_graph=False\nboost:without_graph_parallel=True\nboost:without_iostreams=False\nboost:without_locale=False\nboost:without_log=False\nboost:without_math=False\nboost:without_mpi=True\nboost:without_nowide=True\nboost:without_program_options=False\nboost:without_python=True\nboost:without_random=False\nboost:without_regex=False\nboost:without_serialization=False\nboost:without_stacktrace=False\nboost:without_system=False\nboost:without_test=False\nboost:without_thread=False\nboost:without_timer=False\nboost:without_type_erasure=False\nboost:without_wave=False\nboost:zlib=True\nboost:zstd=False\nbzip2:build_executable=True\nbzip2:fPIC=True\nbzip2:shared=False\ngflags:fPIC=True\ngflags:namespace=gflags\ngflags:nothreads=True\ngflags:shared=False\nglog:fPIC=True\nglog:shared=False\nglog:with_gflags=True\nglog:with_threads=True\nlibbacktrace:fPIC=True\nlibbacktrace:shared=False\nlibevent:disable_threads=False\nlibevent:fPIC=True\nlibevent:shared=False\nlibevent:with_openssl=True\nlibgettext:fPIC=True\nlibgettext:shared=False\nlibgettext:threads=posix\nlibiconv:fPIC=True\nlibiconv:shared=False\nlibtool:fPIC=True\nlibtool:shared=False\nlz4:fPIC=True\nlz4:shared=False\nlzo:fPIC=True\nlzo:shared=False\nodbc:fPIC=True\nodbc:shared=False\nodbc:with_libiconv=True\nopenssl:386=False\nopenssl:enable_weak_ssl_ciphers=False\nopenssl:fPIC=True\nopenssl:no_aria=False\nopenssl:no_asm=False\nopenssl:no_async=False\nopenssl:no_bf=False\nopenssl:no_blake2=False\nopenssl:no_camellia=False\nopenssl:no_cast=False\nopenssl:no_chacha=False\nopenssl:no_cms=False\nopenssl:no_comp=False\nopenssl:no_ct=False\nopenssl:no_deprecated=False\nopenssl:no_des=False\nopenssl:no_dgram=False\nopenssl:no_dh=False\nopenssl:no_dsa=False\nopenssl:no_dso=False\nopenssl:no_ec=False\nopenssl:no_ecdh=False\nopenssl:no_ecdsa=False\nopenssl:no_engine=False\nopenssl:no_filenames=False\nopenssl:no_gost=False\nopenssl:no_hmac=False\nopenssl:no_idea=False\nopenssl:no_md4=False\nopenssl:no_md5=False\nopenssl:no_mdc2=False\nopenssl:no_ocsp=False\nopenssl:no_pinshared=False\nopenssl:no_rc2=False\nopenssl:no_rfc3779=False\nopenssl:no_rmd160=False\nopenssl:no_rsa=False\nopenssl:no_seed=False\nopenssl:no_sha=False\nopenssl:no_sm2=False\nopenssl:no_sm3=False\nopenssl:no_sm4=False\nopenssl:no_sock=False\nopenssl:no_srp=False\nopenssl:no_srtp=False\nopenssl:no_sse2=False\nopenssl:no_ssl=False\nopenssl:no_ssl3=False\nopenssl:no_stdio=False\nopenssl:no_tests=False\nopenssl:no_threads=False\nopenssl:no_tls1=False\nopenssl:no_ts=False\nopenssl:no_whirlpool=False\nopenssl:openssldir=None\nopenssl:shared=False\nprotobuf:debug_suffix=True\nprotobuf:fPIC=True\nprotobuf:lite=False\nprotobuf:shared=False\nprotobuf:with_zlib=True\nzlib:fPIC=True\nzlib:shared=False\nzstd:fPIC=True\nzstd:shared=False\nzstd:threading=True",
+    "requires": [
+     "1",
+     "3",
+     "4",
+     "9",
+     "10",
+     "11",
+     "12",
+     "13",
+     "14",
+     "15",
+     "16",
+     "18",
+     "19",
+     "20"
+    ],
+    "build_requires": [
+     "35",
+     "5",
+     "36",
+     "37"
+    ],
+    "path": "../conanfile.txt",
+    "context": "host"
+   },
+   "1": {
+    "ref": "libgettext/0.21",
+    "options": "fPIC=True\nshared=False\nthreads=posix\nlibiconv:fPIC=True\nlibiconv:shared=False",
+    "package_id": "8a7316017049fc4be217a7dc02b67db5f65039dc",
+    "prev": "0",
+    "requires": [
+     "2"
+    ],
+    "context": "host"
+   },
+   "2": {
+    "ref": "libiconv/1.17",
+    "options": "fPIC=True\nshared=False",
+    "package_id": "240c2182163325b213ca6886a7614c8ed2bf1738",
+    "prev": "0",
+    "context": "host"
+   },
+   "3": {
+    "ref": "binutils/2.39@doris/thirdparty",
+    "options": "",
+    "package_id": "40c0afbbefa9c775f240250d807a731953086ddf",
+    "prev": "0",
+    "context": "host"
+   },
+   "4": {
+    "ref": "odbc/2.3.7",
+    "options": "fPIC=True\nshared=False\nwith_libiconv=True\nlibiconv:fPIC=True\nlibiconv:shared=False\nlibtool:fPIC=True\nlibtool:shared=False",
+    "package_id": "0d873886c020fc487f1a8d9e4ac24a09f0403ecd",
+    "prev": "0",
+    "requires": [
+     "5",
+     "2"
+    ],
+    "context": "host"
+   },
+   "5": {
+    "ref": "libtool/2.4.7",
+    "options": "fPIC=True\nshared=False",
+    "package_id": "163e4a3bdfbcfb21964a0ca9aad051981ad600e2",
+    "prev": "0",
+    "requires": [
+     "6"
+    ],
+    "context": "host"
+   },
+   "6": {
+    "ref": "automake/1.16.5",
+    "options": "",
+    "package_id": "3c28ba69276b46fd46e9c2060ba991d725ccab43",
+    "prev": "0",
+    "requires": [
+     "7"
+    ],
+    "context": "host"
+   },
+   "7": {
+    "ref": "autoconf/2.71",
+    "options": "",
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9",
+    "prev": "0",
+    "requires": [
+     "8"
+    ],
+    "context": "host"
+   },
+   "8": {
+    "ref": "m4/1.4.19",
+    "options": "",
+    "package_id": "3eb32b976fb0626f3c40a8b87ace72156aa44204",
+    "prev": "0",
+    "context": "host"
+   },
+   "9": {
+    "ref": "openssl/1.1.1s",
+    "options": "386=False\nenable_weak_ssl_ciphers=False\nfPIC=True\nno_aria=False\nno_asm=False\nno_async=False\nno_bf=False\nno_blake2=False\nno_camellia=False\nno_cast=False\nno_chacha=False\nno_cms=False\nno_comp=False\nno_ct=False\nno_deprecated=False\nno_des=False\nno_dgram=False\nno_dh=False\nno_dsa=False\nno_dso=False\nno_ec=False\nno_ecdh=False\nno_ecdsa=False\nno_engine=False\nno_filenames=False\nno_gost=False\nno_hmac=False\nno_idea=False\nno_md4=False\nno_md5=False\nno_mdc2=False\nno_ocsp=False\nno_pinshared=False\nno_rc2=False\nno_rfc3779=False\nno_rmd160=False\nno_rsa=False\nno_seed=False\nno_sha=False\nno_sm2=False\nno_sm3=False\nno_sm4=False\nno_sock=False\nno_srp=False\nno_srtp=False\nno_sse2=False\nno_ssl=False\nno_ssl3=False\nno_stdio=False\nno_tests=False\nno_threads=False\nno_tls1=False\nno_ts=False\nno_whirlpool=False\nopenssldir=None\nshared=False",
+    "package_id": "240c2182163325b213ca6886a7614c8ed2bf1738",
+    "prev": "0",
+    "context": "host"
+   },
+   "10": {
+    "ref": "libevent/2.1.12@doris/thirdparty",
+    "options": "disable_threads=False\nfPIC=True\nshared=False\nwith_openssl=True\nopenssl:386=False\nopenssl:enable_weak_ssl_ciphers=False\nopenssl:fPIC=True\nopenssl:no_aria=False\nopenssl:no_asm=False\nopenssl:no_async=False\nopenssl:no_bf=False\nopenssl:no_blake2=False\nopenssl:no_camellia=False\nopenssl:no_cast=False\nopenssl:no_chacha=False\nopenssl:no_cms=False\nopenssl:no_comp=False\nopenssl:no_ct=False\nopenssl:no_deprecated=False\nopenssl:no_des=False\nopenssl:no_dgram=False\nopenssl:no_dh=False\nopenssl:no_dsa=False\nopenssl:no_dso=False\nopenssl:no_ec=False\nopenssl:no_ecdh=False\nopenssl:no_ecdsa=False\nopenssl:no_engine=False\nopenssl:no_filenames=False\nopenssl:no_gost=False\nopenssl:no_hmac=False\nopenssl:no_idea=False\nopenssl:no_md4=False\nopenssl:no_md5=False\nopenssl:no_mdc2=False\nopenssl:no_ocsp=False\nopenssl:no_pinshared=False\nopenssl:no_rc2=False\nopenssl:no_rfc3779=False\nopenssl:no_rmd160=False\nopenssl:no_rsa=False\nopenssl:no_seed=False\nopenssl:no_sha=False\nopenssl:no_sm2=False\nopenssl:no_sm3=False\nopenssl:no_sm4=False\nopenssl:no_sock=False\nopenssl:no_srp=False\nopenssl:no_srtp=False\nopenssl:no_sse2=False\nopenssl:no_ssl=False\nopenssl:no_ssl3=False\nopenssl:no_stdio=False\nopenssl:no_tests=False\nopenssl:no_threads=False\nopenssl:no_tls1=False\nopenssl:no_ts=False\nopenssl:no_whirlpool=False\nopenssl:openssldir=None\nopenssl:shared=False",
+    "package_id": "9e7ef7ab9294d7f9216a3a3c37551b14c5cd7edf",
+    "prev": "0",
+    "python_requires": [
+     "libevent/2.1.12"
+    ],
+    "requires": [
+     "9"
+    ],
+    "context": "host"
+   },
+   "11": {
+    "ref": "zlib/1.2.13",
+    "options": "fPIC=True\nshared=False",
+    "package_id": "240c2182163325b213ca6886a7614c8ed2bf1738",
+    "prev": "0",
+    "context": "host"
+   },
+   "12": {
+    "ref": "lz4/1.9.4",
+    "options": "fPIC=True\nshared=False",
+    "package_id": "240c2182163325b213ca6886a7614c8ed2bf1738",
+    "prev": "0",
+    "context": "host"
+   },
+   "13": {
+    "ref": "bzip2/1.0.8",
+    "options": "build_executable=True\nfPIC=True\nshared=False",
+    "package_id": "238a93dc813ca1550968399f1f8925565feeff8e",
+    "prev": "0",
+    "context": "host"
+   },
+   "14": {
+    "ref": "lzo/2.10",
+    "options": "fPIC=True\nshared=False",
+    "package_id": "240c2182163325b213ca6886a7614c8ed2bf1738",
+    "prev": "0",
+    "context": "host"
+   },
+   "15": {
+    "ref": "zstd/1.5.2",
+    "options": "fPIC=True\nshared=False\nthreading=True",
+    "package_id": "21fe575bc61c7876dbea6bcaa88c986c622ccc02",
+    "prev": "0",
+    "context": "host"
+   },
+   "16": {
+    "ref": "boost/1.73.0",
+    "options": "addr2line_location=/usr/bin/addr2line\nasio_no_deprecated=False\nbuildid=None\nbzip2=True\ndebug_level=0\ndiagnostic_definitions=False\nerror_code_header_only=False\nextra_b2_flags=None\nfPIC=True\nfilesystem_no_deprecated=False\nfilesystem_use_std_fs=False\nfilesystem_version=None\nheader_only=False\ni18n_backend=deprecated\ni18n_backend_iconv=libiconv\ni18n_backend_icu=False\nlayout=system\nlzma=False\nmagic_autolink=False\nmultithreading=True\nnamespace=boost\nnamespace_alias=False\npch=True\npython_executable=None\npython_version=None\nsegmented_stacks=False\nshared=False\nsystem_no_deprecated=False\nsystem_use_utf8=False\nvisibility=hidden\nwith_stacktrace_backtrace=True\nwithout_atomic=False\nwithout_chrono=False\nwithout_container=False\nwithout_context=False\nwithout_contract=False\nwithout_coroutine=False\nwithout_date_time=False\nwithout_exception=False\nwithout_fiber=True\nwithout_filesystem=False\nwithout_graph=False\nwithout_graph_parallel=True\nwithout_iostreams=False\nwithout_locale=False\nwithout_log=False\nwithout_math=False\nwithout_mpi=True\nwithout_nowide=True\nwithout_program_options=False\nwithout_python=True\nwithout_random=False\nwithout_regex=False\nwithout_serialization=False\nwithout_stacktrace=False\nwithout_system=False\nwithout_test=False\nwithout_thread=False\nwithout_timer=False\nwithout_type_erasure=False\nwithout_wave=False\nzlib=True\nzstd=False\nbzip2:build_executable=True\nbzip2:fPIC=True\nbzip2:shared=False\nlibbacktrace:fPIC=True\nlibbacktrace:shared=False\nlibiconv:fPIC=True\nlibiconv:shared=False\nzlib:fPIC=True\nzlib:shared=False",
+    "package_id": "ebfdea2a0cd068a3d8fd8a4a2138aa8f2971a199",
+    "prev": "0",
+    "requires": [
+     "11",
+     "13",
+     "17",
+     "2"
+    ],
+    "context": "host"
+   },
+   "17": {
+    "ref": "libbacktrace/cci.20210118",
+    "options": "fPIC=True\nshared=False",
+    "package_id": "240c2182163325b213ca6886a7614c8ed2bf1738",
+    "prev": "0",
+    "context": "host"
+   },
+   "18": {
+    "ref": "protobuf/3.15.0@doris/thirdparty",
+    "options": "debug_suffix=True\nfPIC=True\nlite=False\nshared=False\nwith_zlib=True\nzlib:fPIC=True\nzlib:shared=False",
+    "package_id": "6cdc17a2eb5a82341aaca7b0cd60fb4a1c00de6c",
+    "prev": "0",
+    "python_requires": [
+     "protobuf/3.15.8"
+    ],
+    "requires": [
+     "11"
+    ],
+    "context": "host"
+   },
+   "19": {
+    "ref": "gflags/2.2.2",
+    "options": "fPIC=True\nnamespace=gflags\nnothreads=True\nshared=False",
+    "package_id": "589d4fbb97cd771d441f5ef1b71363a1af31776e",
+    "prev": "0",
+    "modified": true,
+    "build_requires": [
+     "21",
+     "22",
+     "26",
+     "27"
+    ],
+    "context": "host"
+   },
+   "20": {
+    "ref": "glog/0.4.0@doris/thirdparty",
+    "options": "fPIC=True\nshared=False\nwith_gflags=True\nwith_threads=True\ngflags:fPIC=True\ngflags:namespace=gflags\ngflags:nothreads=True\ngflags:shared=False",
+    "package_id": "1bb8842ebf9f475a8523968c408087ac6efc2f66",
+    "prev": "0",
+    "python_requires": [
+     "glog/0.4.0"
+    ],
+    "modified": true,
+    "requires": [
+     "19"
+    ],
+    "build_requires": [
+     "28",
+     "29",
+     "33",
+     "34"
+    ],
+    "context": "host"
+   },
+   "21": {
+    "ref": "make/4.3",
+    "options": "",
+    "package_id": "3eb32b976fb0626f3c40a8b87ace72156aa44204",
+    "prev": "0",
+    "context": "host"
+   },
+   "22": {
+    "ref": "libtool/2.4.7",
+    "options": "fPIC=True\nshared=False",
+    "package_id": "163e4a3bdfbcfb21964a0ca9aad051981ad600e2",
+    "prev": "0",
+    "requires": [
+     "23"
+    ],
+    "context": "host"
+   },
+   "23": {
+    "ref": "automake/1.16.5",
+    "options": "",
+    "package_id": "3c28ba69276b46fd46e9c2060ba991d725ccab43",
+    "prev": "0",
+    "requires": [
+     "24"
+    ],
+    "context": "host"
+   },
+   "24": {
+    "ref": "autoconf/2.71",
+    "options": "",
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9",
+    "prev": "0",
+    "requires": [
+     "25"
+    ],
+    "context": "host"
+   },
+   "25": {
+    "ref": "m4/1.4.19",
+    "options": "",
+    "package_id": "3eb32b976fb0626f3c40a8b87ace72156aa44204",
+    "prev": "0",
+    "context": "host"
+   },
+   "26": {
+    "ref": "pkgconf/1.9.3",
+    "options": "enable_lib=False",
+    "package_id": "3eb32b976fb0626f3c40a8b87ace72156aa44204",
+    "prev": "0",
+    "context": "host"
+   },
+   "27": {
+    "ref": "cmake/3.25.1",
+    "options": "bootstrap=True\nwith_openssl=False",
+    "package_id": "3eb32b976fb0626f3c40a8b87ace72156aa44204",
+    "prev": "0",
+    "context": "host"
+   },
+   "28": {
+    "ref": "make/4.3",
+    "options": "",
+    "package_id": "3eb32b976fb0626f3c40a8b87ace72156aa44204",
+    "prev": "0",
+    "context": "host"
+   },
+   "29": {
+    "ref": "libtool/2.4.7",
+    "options": "fPIC=True\nshared=False",
+    "package_id": "163e4a3bdfbcfb21964a0ca9aad051981ad600e2",
+    "prev": "0",
+    "requires": [
+     "30"
+    ],
+    "context": "host"
+   },
+   "30": {
+    "ref": "automake/1.16.5",
+    "options": "",
+    "package_id": "3c28ba69276b46fd46e9c2060ba991d725ccab43",
+    "prev": "0",
+    "requires": [
+     "31"
+    ],
+    "context": "host"
+   },
+   "31": {
+    "ref": "autoconf/2.71",
+    "options": "",
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9",
+    "prev": "0",
+    "requires": [
+     "32"
+    ],
+    "context": "host"
+   },
+   "32": {
+    "ref": "m4/1.4.19",
+    "options": "",
+    "package_id": "3eb32b976fb0626f3c40a8b87ace72156aa44204",
+    "prev": "0",
+    "context": "host"
+   },
+   "33": {
+    "ref": "pkgconf/1.9.3",
+    "options": "enable_lib=False",
+    "package_id": "3eb32b976fb0626f3c40a8b87ace72156aa44204",
+    "prev": "0",
+    "context": "host"
+   },
+   "34": {
+    "ref": "cmake/3.25.1",
+    "options": "bootstrap=True\nwith_openssl=False",
+    "package_id": "3eb32b976fb0626f3c40a8b87ace72156aa44204",
+    "prev": "0",
+    "context": "host"
+   },
+   "35": {
+    "ref": "make/4.3",
+    "options": "",
+    "package_id": "3eb32b976fb0626f3c40a8b87ace72156aa44204",
+    "prev": "0",
+    "context": "host"
+   },
+   "36": {
+    "ref": "pkgconf/1.9.3",
+    "options": "enable_lib=False",
+    "package_id": "3eb32b976fb0626f3c40a8b87ace72156aa44204",
+    "prev": "0",
+    "context": "host"
+   },
+   "37": {
+    "ref": "cmake/3.25.1",
+    "options": "bootstrap=True\nwith_openssl=False",
+    "package_id": "3eb32b976fb0626f3c40a8b87ace72156aa44204",
+    "prev": "0",
+    "context": "host"
+   }
+  },
+  "revisions_enabled": false
+ },
+ "version": "0.4",
+ "profile_host": "[settings]\narch=armv8\narch_build=armv8\nbuild_type=Release\ncompiler=apple-clang\ncompiler.libcxx=libc++\ncompiler.version=14\nos=Macos\nos_build=Macos\n[options]\ncmake:bootstrap=True\ncmake:with_openssl=False\n[build_requires]\n*: make/4.3, libtool/2.4.7, pkgconf/1.9.3, cmake/3.25.1\n[env]\nPATH=/usr/bin:/bin\n[conf]\ntools.env.virtualenv:auto_use=True\n"
+}
