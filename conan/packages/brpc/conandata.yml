@@ -1,0 +1,12 @@
+sources:
+  "1.2.0":
+    url: https://github.com/apache/brpc/archive/refs/tags/1.2.0.tar.gz
+    md5: c3c148e672dc660ad48d8bd973f95dcf
+
+patches:
+  "1.2.0":
+    - patch_file: patches/brpc-1.2.0-01.patch
+    - patch_file: patches/brpc-fix-clang-15-linkage-error.patch
+    - patch_file: patches/brpc-fix-linux-aarch64-clang-build.patch
+    - patch_file: patches/brpc-fix-conan-cmake.patch
+

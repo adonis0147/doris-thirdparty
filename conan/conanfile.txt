@@ -20,3 +20,9 @@ libcurl/7.79.0
 re2/20210202
 thrift/0.13.0
 leveldb/1.23
+brpc/1.2.0@doris/thirdparty
+
+[options]
+gflags:nothreads = False
+brpc:with_glog = True
+
