@@ -23,6 +23,7 @@ leveldb/1.23
 brpc/1.2.0@doris/thirdparty
 jemalloc/5.2.1@doris/thirdparty
 rocksdb/5.14.2@doris/thirdparty
+krb5/1.19@doris/thirdparty
 
 [options]
 gflags:nothreads = False

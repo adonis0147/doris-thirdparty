@@ -1,0 +1,5 @@
+sources:
+  "1.19":
+    url: https://kerberos.org/dist/krb5/1.19/krb5-1.19.tar.gz
+    md5: aaf18447a5a014aa3b7e81814923f4c9
+
