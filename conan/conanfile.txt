@@ -18,3 +18,5 @@ snappy/1.1.8
 gperftools/2.10@doris/thirdparty
 libcurl/7.79.0
 re2/20210202
+thrift/0.13.0
+leveldb/1.23
