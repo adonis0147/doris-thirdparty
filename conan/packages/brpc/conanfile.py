@@ -59,6 +59,8 @@ class BrpcConan(ConanFile):
 
     def generate(self):
         tc = CMakeToolchain(self)
+        tc.variables["WITH_GLOG"] = "ON" if self.options.with_glog else "OFF"
+        tc.variables["BUILD_BRPC_TOOLS"] = "ON" if self.options.build_tools else "OFF"
         tc.generate()
 
         deps = CMakeDeps(self)
@@ -67,11 +69,7 @@ class BrpcConan(ConanFile):
     def build(self):
         self._patch_sources()
         cmake = CMake(self)
-        args = [
-            "-DWITH_GLOG={}".format("ON" if self.options.with_glog else "OFF"),
-            "-DBUILD_BRPC_TOOLS={}".format("ON" if self.options.build_tools else "OFF"),
-        ]
-        cmake.configure(cli_args=args)
+        cmake.configure()
         cmake.build()
 
     def _patch_sources(self):

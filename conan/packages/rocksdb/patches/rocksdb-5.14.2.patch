@@ -1,0 +1,13 @@
+diff --git a/util/channel.h b/util/channel.h
+index 1b030192c..e27a1ccfc 100644
+--- a/util/channel.h
++++ b/util/channel.h
+@@ -60,7 +60,7 @@ class channel {
+ 
+  private:
+   std::condition_variable cv_;
+-  std::mutex lock_;
++  mutable std::mutex lock_;
+   std::queue<T> buffer_;
+   bool eof_;
+ };

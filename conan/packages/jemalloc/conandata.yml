@@ -1,0 +1,9 @@
+sources:
+  "5.2.1":
+    url: https://github.com/jemalloc/jemalloc/releases/download/5.2.1/jemalloc-5.2.1.tar.bz2
+    md5: 3d41fbf006e6ebffd489bdb304d009ae
+
+patches:
+  "5.2.1":
+    - patch_file: patches/jemalloc_hook.patch
+

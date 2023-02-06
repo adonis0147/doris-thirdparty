@@ -21,8 +21,13 @@ re2/20210202
 thrift/0.13.0
 leveldb/1.23
 brpc/1.2.0@doris/thirdparty
+jemalloc/5.2.1@doris/thirdparty
+rocksdb/5.14.2@doris/thirdparty
 
 [options]
 gflags:nothreads = False
 brpc:with_glog = True
+rocksdb:with_lz4 = True
+rocksdb:with_snappy = True
+rocksdb:use_rtti = True
 

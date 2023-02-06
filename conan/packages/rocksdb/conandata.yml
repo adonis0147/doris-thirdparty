@@ -1,0 +1,11 @@
+sources:
+  "5.14.2":
+    url: https://github.com/facebook/rocksdb/archive/v5.14.2.tar.gz 
+    md5: b72720ea3b1e9ca9e4ed0febfef65b14
+
+patches:
+  "5.14.2":
+    - patch_file: patches/rocksdb-5.14.2.patch
+      base_path: source_subfolder
+      strip: 1
+
