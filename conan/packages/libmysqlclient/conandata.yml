@@ -1,0 +1,9 @@
+sources:
+  "5.7.18":
+    url: https://github.com/mysql/mysql-server/archive/mysql-5.7.18.tar.gz 
+    md5: 58598b10dce180e4d1fbdd7cf5fa68d6
+
+patches:
+ "5.7.18":
+   - patch_file: patches/mysql-server-mysql-5.7.18.patch
+

@@ -1,0 +1,34 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index d202816..3aa77c6 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -484,8 +484,6 @@ INCLUDE_DIRECTORIES(
+ MYSQL_CHECK_ZLIB_WITH_COMPRESS()
+ # Add bundled yassl/taocrypt or system openssl.
+ MYSQL_CHECK_SSL()
+-# Add system/bundled editline.
+-MYSQL_CHECK_EDITLINE()
+ # Add libevent
+ MYSQL_CHECK_LIBEVENT()
+ # Add lz4 library
+diff --git a/cmd-line-utils/libedit/terminal.c b/cmd-line-utils/libedit/terminal.c
+index e1f45ca..85f05b6 100644
+--- a/cmd-line-utils/libedit/terminal.c
++++ b/cmd-line-utils/libedit/terminal.c
+@@ -866,7 +866,6 @@ protected int
+ terminal_set(EditLine *el, const char *term)
+ {
+ 	int i;
+-	char buf[TC_BUFSIZE];
+ 	char *area;
+ 	const struct termcapstr *t;
+ 	sigset_t oset, nset;
+@@ -876,7 +875,7 @@ terminal_set(EditLine *el, const char *term)
+ 	(void) sigaddset(&nset, SIGWINCH);
+ 	(void) sigprocmask(SIG_BLOCK, &nset, &oset);
+ 
+-	area = buf;
++	area = NULL;
+ 
+ 
+ 	if (term == NULL)
