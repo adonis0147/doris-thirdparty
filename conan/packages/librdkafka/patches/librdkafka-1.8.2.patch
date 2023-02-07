@@ -1,0 +1,15 @@
+diff --git a/src/rdkafka_broker.c b/src/rdkafka_broker.c
+index 588f1a55..a467d84a 100644
+--- a/src/rdkafka_broker.c
++++ b/src/rdkafka_broker.c
+@@ -5464,7 +5464,9 @@ static int rd_kafka_broker_thread_main (void *arg) {
+  */
+ void rd_kafka_broker_destroy_final (rd_kafka_broker_t *rkb) {
+ 
+-        rd_assert(thrd_is_current(rkb->rkb_thread));
++        // To avoid the error describe in https://github.com/edenhill/librdkafka/issues/3608
++        // comment this line to fix it temporarily.
++        // rd_assert(thrd_is_current(rkb->rkb_thread));
+         rd_assert(TAILQ_EMPTY(&rkb->rkb_monitors));
+         rd_assert(TAILQ_EMPTY(&rkb->rkb_outbufs.rkbq_bufs));
+         rd_assert(TAILQ_EMPTY(&rkb->rkb_waitresps.rkbq_bufs));

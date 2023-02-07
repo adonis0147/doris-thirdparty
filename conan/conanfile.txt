@@ -25,6 +25,7 @@ jemalloc/5.2.1@doris/thirdparty
 rocksdb/5.14.2@doris/thirdparty
 krb5/1.19@doris/thirdparty
 cyrus-sasl/2.1.27@doris/thirdparty
+librdkafka/1.8.2@doris/thirdparty
 
 [options]
 gflags:nothreads = False
@@ -33,4 +34,7 @@ rocksdb:with_lz4 = True
 rocksdb:with_snappy = True
 rocksdb:use_rtti = True
 cyrus-sasl:with_gssapi = True
+librdkafka:ssl = True
+librdkafka:sasl = True
+librdkafka:zstd = True
 
