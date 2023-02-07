@@ -1,0 +1,9 @@
+sources:
+  "1.7.2":
+    url: https://archive.apache.org/dist/orc/orc-1.7.2/orc-1.7.2.tar.gz
+    md5: 6cab37935eacdec7d078d327746a8578
+
+patches:
+  "1.7.2":
+    - patch_file: ./patches/fix-conan-cmake.patch
+
