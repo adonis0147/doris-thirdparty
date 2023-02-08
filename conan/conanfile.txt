@@ -27,7 +27,7 @@ krb5/1.19@doris/thirdparty
 cyrus-sasl/2.1.27@doris/thirdparty
 librdkafka/1.8.2@doris/thirdparty
 flatbuffers/2.0.0
-orc/1.7.2@doris/thirdparty
+arrow/7.0.0@doris/thirdparty
 roaring/0.4.0
 fmt/7.1.3
 parallel-hashmap/1.3.8

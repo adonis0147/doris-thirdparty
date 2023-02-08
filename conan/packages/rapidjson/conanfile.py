@@ -22,3 +22,7 @@ class RapidjsonConan(ConanFile):
     def package(self):
         self.copy("include/*", src=os.path.join(self.source_folder, self.name), dst=self.package_folder)
 
+    def package_info(self):
+        self.cpp_info.set_property("cmake_file_name", "RapidJSON")
+        self.cpp_info.set_property("cmake_target_name", "RapidJSON::RapidJSON")
+

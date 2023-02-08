@@ -14,7 +14,7 @@ cd build
 
 profile="${current_dir}/profiles/doris_$(uname -s | awk '{ print(tolower($0)) }')"
 
-conan install "${current_dir}" --build=missing --profile="${profile}"
+conan install "${current_dir}" --build=missing --build=outdated --build=cascade --profile="${profile}"
 
 arch="$(uname -m)"
 if [[ "${arch}" == 'arm64' || "${arch}" == 'aarch64' ]]; then
@@ -22,6 +22,6 @@ if [[ "${arch}" == 'arm64' || "${arch}" == 'aarch64' ]]; then
 else
 	conanfile="${current_dir}/platforms/conanfile_$(uname -m).txt"
 fi
-conan install "${conanfile}" --build=missing --profile="${profile}"
+conan install "${conanfile}" --build=missing --build=outdated --build=cascade --profile="${profile}"
 
 popd >/dev/null

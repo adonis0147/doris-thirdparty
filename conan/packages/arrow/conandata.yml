@@ -1,0 +1,10 @@
+sources:
+  "7.0.0":
+    url: https://dlcdn.apache.org/arrow/arrow-7.0.0/apache-arrow-7.0.0.tar.gz
+    md5: 316ade159901646849b3b4760fa52816
+
+patches:
+  "7.0.0":
+    - patch_file: patches/apache-arrow-7.0.0.patch
+    - patch_file: patches/fix-conan-cmake.patch
+
