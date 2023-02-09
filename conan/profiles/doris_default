@@ -4,11 +4,7 @@ include(default)
 make/4.3
 libtool/2.4.7
 pkgconf/1.9.3
-cmake/3.25.1
-
-[options]
-cmake:bootstrap=True
-cmake:with_openssl=False
+cmake/3.25.2@doris/thirdparty
 
 [conf]
 tools.env.virtualenv:auto_use=True

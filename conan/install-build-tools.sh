@@ -8,6 +8,7 @@ mkdir -p build
 
 pushd build >/dev/null
 
+conan export "${current_dir}/packages/cmake"
 conan export "${current_dir}/packages/ninja"
 
 temp_folder=$(mktemp -d)
@@ -18,6 +19,6 @@ cat >"${temp_folder}/conanfile.txt" <<EOF
 [requires]
 EOF
 
-conan install "${temp_folder}" --profile="${current_dir}/profiles/doris_default" --build=missing
+conan install "${temp_folder}" --profile="${current_dir}/profiles/doris_default" --build=missing --build=outdated
 
 popd >/dev/null

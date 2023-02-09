@@ -1,9 +1,9 @@
-import os
 from conan import ConanFile, conan_version
 from conan.tools.cmake import CMake, CMakeToolchain, cmake_layout
 from conan.tools.env import VirtualBuildEnv
 from conan.tools.files import copy, get
 from conan.tools.scm import Version
+import os
 
 required_conan_version = ">=1.52.0"
 
@@ -12,7 +12,7 @@ class NinjaConan(ConanFile):
     name = "ninja"
     version = "1.11.1"
 
-    build_requires = "cmake/3.25.1"
+    requires = "cmake/3.25.2@doris/thirdparty"
 
     package_type = "application"
     description = "Ninja is a small build system with a focus on speed"
@@ -32,13 +32,8 @@ class NinjaConan(ConanFile):
         get(self, **self.conan_data["sources"][self.version],
             destination=self.source_folder, strip_root=True)
 
-    def configure(self):
-        self.options["cmake"].bootstrap = True
-        self.options["cmake"].with_openssl = False
-
     def generate(self):
         VirtualBuildEnv(self).generate()
-
         tc = CMakeToolchain(self)
         tc.variables["BUILD_TESTING"] = False
         tc.generate()
@@ -56,8 +51,6 @@ class NinjaConan(ConanFile):
     def package_info(self):
         self.cpp_info.includedirs = []
         self.cpp_info.libdirs = []
-
-        self.buildenv_info.define("CONAN_CMAKE_GENERATOR", "Ninja")
 
         # TODO: to remove in conan v2
         if Version(conan_version).major < 2:
