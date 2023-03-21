@@ -9,8 +9,8 @@ task:
     brew update
     popd
 
-    brew install automake autoconf libtool pkg-config texinfo coreutils gnu-getopt python \
-      cmake ninja ccache bison byacc gettext wget pcre llvm openjdk@11 maven node
+    brew install automake autoconf libtool pkg-config texinfo coreutils gnu-getopt python@3 \
+      cmake ninja ccache bison byacc gettext wget pcre llvm@15 openjdk@11 maven node
 
     git clone https://github.com/apache/doris
 
