@@ -96,7 +96,7 @@ jobs:
       matrix:
         config:
           - name: macOS
-            os: macos-12
+            os: macos-13
             packages: >-
               'automake'
               'autoconf'
@@ -183,6 +183,8 @@ jobs:
         run: |
           if [[ "${{ matrix.config.name }}" == 'macOS' ]]; then
             brew install ${{ matrix.config.packages }}
+            export SDKROOT=/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk
+            export MACOSX_DEPLOYMENT_TARGET=12.3
           else
             export DEFAULT_DIR='/opt/doris'
             export PATH="${DEFAULT_DIR}/ldb-toolchain/bin:${PATH}"
