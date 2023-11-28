@@ -9,12 +9,38 @@ task:
     brew update
     popd
 
+    for cellar in $(brew list); do
+      brew uninstall --ignore-dependencies "${cellar}"
+    done
+    brew cleanup
+
     brew install automake autoconf libtool pkg-config texinfo coreutils gnu-getopt python@3 \
-      cmake ninja ccache bison byacc gettext wget pcre llvm@16 openjdk@11 maven node rust
+      cmake ninja ccache bison byacc gettext wget pcre llvm@16 openjdk@11 maven node
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    source "${HOME}/.cargo/env"
 
-    git clone https://github.com/apache/doris
+    git clone --depth=1 https://github.com/apache/doris
+    cd doris
+    rm -rf docker pytest fe docs regression-test
 
-    cd doris/thirdparty
+    cd thirdparty
+
+    sed '/${command}/a \
+            names=$(sed -n "/${command}()/,/^}/p" "${DORIS_THIRDPARTY}/build-thirdparty.sh" | \
+              sed -n "/check_if_source_exist/ s/.*\\"\\${\\(.*\\)}\\"/\\1/p") \
+            read -r -a source_names <<<"${names//$'"'\\\n'"'/ }" \
+            for source_name in "${source_names[@]}"; do \
+              download_name="${source_name%_SOURCE}_NAME" \
+              if ! [[ "${!source_name}" =~ boost_* ]]; then \
+                rm -rf "${TP_SOURCE_DIR}/${!source_name}" \
+              fi \
+              if ! [[ "${!download_name}" =~ jemalloc-* ]]; then \
+                rm -rf "${TP_SOURCE_DIR}/${!download_name}" \
+              fi \
+            done
+    ' build-thirdparty.sh >build-thirdparty.sh.bak
+    mv build-thirdparty.sh.bak build-thirdparty.sh
+
     bash build-thirdparty.sh -j "$(nproc)"
     rm -rf src
 
