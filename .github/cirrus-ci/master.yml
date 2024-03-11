@@ -1,7 +1,8 @@
 macos_instance:
-  image: ghcr.io/cirruslabs/macos-monterey-base:latest
+  image: ghcr.io/cirruslabs/macos-sonoma-base:latest
 
 task:
+  timeout_in: 120m
   script: |
     pushd "$(brew --repo)"
     git fetch
@@ -41,6 +42,7 @@ task:
     ' build-thirdparty.sh >build-thirdparty.sh.bak
     mv build-thirdparty.sh.bak build-thirdparty.sh
 
+    export MACOSX_DEPLOYMENT_TARGET=12.0
     bash build-thirdparty.sh -j "$(nproc)"
     rm -rf src
 
