@@ -16,7 +16,8 @@ task:
     brew cleanup
 
     brew install automake autoconf libtool pkg-config texinfo coreutils gnu-getopt python@3 \
-      cmake ninja ccache bison byacc gettext wget pcre llvm@16 openjdk@11 maven node
+      cmake ninja ccache bison byacc gettext wget pcre llvm@16 openjdk@11 maven node m4
+    export PATH="$(brew --prefix)/opt/m4/bin:${PATH}"
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
     source "${HOME}/.cargo/env"
 
