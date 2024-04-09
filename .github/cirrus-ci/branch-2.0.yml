@@ -1,7 +1,8 @@
 macos_instance:
-  image: ghcr.io/cirruslabs/macos-monterey-base:latest
+  image: ghcr.io/cirruslabs/macos-sonoma-base:latest
 
 task:
+  timeout_in: 120m
   script: |
     pushd "$(brew --repo)"
     git fetch
@@ -10,11 +11,14 @@ task:
     popd
 
     brew install automake autoconf libtool pkg-config texinfo coreutils gnu-getopt python@3 \
-      cmake ninja ccache bison byacc gettext wget pcre llvm@16 openjdk@11 maven node
+      cmake ninja ccache bison byacc gettext wget pcre llvm@16 openjdk@11 maven node m4
+    export PATH="$(brew --prefix)/opt/m4/bin:${PATH}"
 
     git clone -b branch-2.0 https://github.com/apache/doris
 
     cd doris/thirdparty
+
+    export MACOSX_DEPLOYMENT_TARGET=12.0
     bash build-thirdparty.sh -j "$(nproc)"
     rm -rf src
 
