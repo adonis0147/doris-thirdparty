@@ -10,11 +10,6 @@ task:
     brew update
     popd
 
-    for cellar in $(brew list); do
-      brew uninstall --ignore-dependencies "${cellar}"
-    done
-    brew cleanup
-
     brew install automake autoconf libtool pkg-config texinfo coreutils gnu-getopt python@3 \
       cmake ninja ccache bison byacc gettext wget pcre llvm@16 openjdk@11 maven node m4
     export PATH="$(brew --prefix)/opt/m4/bin:${PATH}"
@@ -33,7 +28,7 @@ task:
             read -r -a source_names <<<"${names//$'"'\\\n'"'/ }" \
             for source_name in "${source_names[@]}"; do \
               download_name="${source_name%_SOURCE}_NAME" \
-              if ! [[ "${!source_name}" =~ boost_* ]]; then \
+              if ! [[ "${!source_name}" =~ boost_* ]] && ! [[ "${!source_name}" =~ jemalloc-* ]]; then \
                 rm -rf "${TP_SOURCE_DIR}/${!source_name}" \
               fi \
               if ! [[ "${!download_name}" =~ jemalloc-* ]]; then \
